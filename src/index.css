@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  --soft-red: #fdd;
+  --soft-green: #dfd;
+  --soft-blue: #ddf;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

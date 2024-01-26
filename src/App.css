@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+#App {
+  background-color: var(--soft-green);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#card-wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#card,
+#another-card {
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5rem;
+  font-weight: 600;
+  height: 400px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#card {
+  background-color: var(--soft-blue);
+  border-color: blue;
+  color: blue;
+  z-index: 1;
+}
+
+#card.go {
+  animation: c-go 2s linear forwards;
+}
+
+#another-card.go {
+  animation: ac-go 2s linear forwards;
+}
+
+#card.back {
+  animation: c-back 2s linear forwards;
+}
+
+#another-card.back {
+  animation: ac-back 2s linear forwards;
+}
+
+#another-card {
+  background-color: var(--soft-red);
+  border-color: red;
+  color: red;
+  transform: rotate(2.24deg);
+  position: absolute;
+}
+
+button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(25deg, red 0%, green 50%, blue 100%);
+  color: white;
+  margin: 25px auto 0 auto;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+@keyframes c-go {
+  50% {
+    transform: translate(-60%);
+  }
+  100% {
+    transform: translate(0) rotate(-2.24deg);
+    z-index: 0;
+  }
+}
+
+@keyframes ac-go {
+  50% {
+    transform: translate(60%) rotate(9deg);
+  }
+  100% {
+    transform: translate(0) rotate(0);
+    z-index: 1;
+  }
+}
+
+@keyframes c-back {
+  0% {
+    z-index: 0;
+  }
+  50% {
+    transform: translate(-60%) rotate(-9deg);
+  }
+  100% {
+    transform: translate(0) rotate(0);
+    z-index: 1;
+  }
+}
+
+@keyframes ac-back {
+  0% {
+    z-index: 1;
+  }
+  50% {
+    transform: translate(60%);
+  }
+  100% {
+    transform: translate(0) rotate(2.24deg);
+    z-index: 0;
+  }
+}
